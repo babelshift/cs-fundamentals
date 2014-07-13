@@ -47,8 +47,8 @@
   <ItemGroup>
     <Compile Include="Algorithms\AStarGraphTraversal.cs" />
     <Compile Include="Algorithms\BinarySearch.cs" />
-    <Compile Include="Algorithms\BreadthFirstSearch.cs" />
-    <Compile Include="Algorithms\DepthFirstSearch.cs" />
+    <Compile Include="Algorithms\BreadthFirstTraversal.cs" />
+    <Compile Include="Algorithms\DepthFirstTraversal.cs" />
     <Compile Include="Algorithms\DijkstrasGraphTraversal.cs" />
     <Compile Include="Algorithms\Knapsack.cs" />
     <Compile Include="Algorithms\MergeSort.cs" />

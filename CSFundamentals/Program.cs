@@ -1,4 +1,5 @@
 ﻿using Algorithms;
+using DataStructures;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,7 +18,43 @@ namespace CSFundamentals
 
             TestSorting(unsorted);
 
+            TestBinaryTree();
+
             Console.ReadLine();
+        }
+
+        private static void TestBinaryTree()
+        {
+            /*
+             * 
+             *              10
+             *             /  \
+             *            5    2
+             *           / \ 
+             *          20 13
+             * 
+             */
+
+            TreeNode<int> root = new TreeNode<int>(10);
+            TreeNode<int> node1 = new TreeNode<int>(5);
+            TreeNode<int> node2 = new TreeNode<int>(2);
+            TreeNode<int> node3 = new TreeNode<int>(20);
+            TreeNode<int> node4 = new TreeNode<int>(13);
+
+            root.Left = node1;
+            root.Right = node2;
+            node1.Left = node3;
+            node1.Right = node4;
+
+            BinaryTree<int> tree = new BinaryTree<int>(root);
+            Console.WriteLine(String.Format("Preorder: {0}", DepthFirstTraversal<int>.GetPreorder(tree)));
+            Console.WriteLine(String.Format("Inorder: {0}", DepthFirstTraversal<int>.GetInorder(tree)));
+            Console.WriteLine(String.Format("Postorder: {0}", DepthFirstTraversal<int>.GetPostorder(tree)));
+
+            TreeNode<int> foundNode = BreadthFirstTraversal<int>.Search(tree, 20);
+            Console.WriteLine(String.Format("Breadth First Search for {0}: {1}", 20, foundNode != null ? "Yes" : "No"));
+            foundNode = BreadthFirstTraversal<int>.Search(tree, 30);
+            Console.WriteLine(String.Format("Breadth First Search for {0}: {1}", 30, foundNode != null ? "Yes" : "No"));
         }
 
         private static int[] GenerateRandomIntArray()
