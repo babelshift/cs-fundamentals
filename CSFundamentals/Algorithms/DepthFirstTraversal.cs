@@ -1,4 +1,5 @@
-﻿using DataStructures;
+﻿using CSFundamentals.DataStructures;
+using DataStructures;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,7 +10,7 @@ namespace Algorithms
 {
     public static class DepthFirstTraversal<T>
     {
-        public static TreeNode<T> Search(BinaryTree<T> tree)
+        public static BinaryTreeNode<T> Search(BinaryTree<T> tree)
         {
             return null;
         }
@@ -19,7 +20,7 @@ namespace Algorithms
         /// </summary>
         /// <param name="tree"></param>
         /// <returns></returns>
-        public static string GetPreorder(BinaryTree<T> tree)
+        public static string GetPreorder(IBinaryTree<T> tree)
         {
             string preorder = Preorder(tree.Root, String.Empty);
             return TrimTrailingComma(preorder);
@@ -30,7 +31,7 @@ namespace Algorithms
         /// </summary>
         /// <param name="tree"></param>
         /// <returns></returns>
-        public static string GetInorder(BinaryTree<T> tree)
+        public static string GetInorder(IBinaryTree<T> tree)
         {
             string inorder = Inorder(tree.Root, String.Empty);
             return TrimTrailingComma(inorder);
@@ -41,7 +42,7 @@ namespace Algorithms
         /// </summary>
         /// <param name="tree"></param>
         /// <returns></returns>
-        public static string GetPostorder(BinaryTree<T> tree)
+        public static string GetPostorder(IBinaryTree<T> tree)
         {
             string inorder = Postorder(tree.Root, String.Empty);
             return TrimTrailingComma(inorder);
@@ -52,7 +53,7 @@ namespace Algorithms
             return output.Remove(output.Length - 2);
         }
 
-        private static string Preorder(TreeNode<T> node, string output)
+        private static string Preorder(BinaryTreeNode<T> node, string output)
         {
             if (node != null)
             {
@@ -72,7 +73,7 @@ namespace Algorithms
             return output;
         }
 
-        private static string Inorder(TreeNode<T> node, string output)
+        private static string Inorder(BinaryTreeNode<T> node, string output)
         {
             if (node.Left != null)
             {
@@ -92,7 +93,7 @@ namespace Algorithms
             return output;
         }
 
-        private static string Postorder(TreeNode<T> node, string output)
+        private static string Postorder(BinaryTreeNode<T> node, string output)
         {
             if (node.Left != null)
             {

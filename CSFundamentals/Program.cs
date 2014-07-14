@@ -1,4 +1,5 @@
 ﻿using Algorithms;
+using CSFundamentals.DataStructures;
 using DataStructures;
 using System;
 using System.Collections.Generic;
@@ -20,7 +21,40 @@ namespace CSFundamentals
 
             TestBinaryTree();
 
+            TestBinarySearchTree();
+
             Console.ReadLine();
+        }
+
+        private static void TestBinarySearchTree()
+        {
+            /*
+             * 
+             *              10
+             *             /  \
+             *            5   20
+             *           /    /
+             *          2    13
+             * 
+             */
+
+            BinarySearchTree<int> tree = new BinarySearchTree<int>();
+
+            tree.Add(10);
+            tree.Add(5);
+            tree.Add(2);
+            tree.Add(20);
+            tree.Add(13);
+
+            Console.WriteLine(String.Format("Binary Search Tree - Preorder: {0}", DepthFirstTraversal<int>.GetPreorder(tree)));
+            Console.WriteLine(String.Format("Binary Search Tree - Inorder: {0}", DepthFirstTraversal<int>.GetInorder(tree)));
+            Console.WriteLine(String.Format("Binary Search Tree - Postorder: {0}", DepthFirstTraversal<int>.GetPostorder(tree)));
+
+            tree.Remove(10);
+
+            Console.WriteLine(String.Format("Binary Search Tree - Preorder (after removing 10): {0}", DepthFirstTraversal<int>.GetPreorder(tree)));
+            Console.WriteLine(String.Format("Binary Search Tree - Inorder (after removing 10): {0}", DepthFirstTraversal<int>.GetInorder(tree)));
+            Console.WriteLine(String.Format("Binary Search Tree - Postorder (after removing 10): {0}", DepthFirstTraversal<int>.GetPostorder(tree)));
         }
 
         private static void TestBinaryTree()
@@ -35,11 +69,11 @@ namespace CSFundamentals
              * 
              */
 
-            TreeNode<int> root = new TreeNode<int>(10);
-            TreeNode<int> node1 = new TreeNode<int>(5);
-            TreeNode<int> node2 = new TreeNode<int>(2);
-            TreeNode<int> node3 = new TreeNode<int>(20);
-            TreeNode<int> node4 = new TreeNode<int>(13);
+            BinaryTreeNode<int> root = new BinaryTreeNode<int>(10);
+            BinaryTreeNode<int> node1 = new BinaryTreeNode<int>(5);
+            BinaryTreeNode<int> node2 = new BinaryTreeNode<int>(2);
+            BinaryTreeNode<int> node3 = new BinaryTreeNode<int>(20);
+            BinaryTreeNode<int> node4 = new BinaryTreeNode<int>(13);
 
             root.Left = node1;
             root.Right = node2;
@@ -47,11 +81,11 @@ namespace CSFundamentals
             node1.Right = node4;
 
             BinaryTree<int> tree = new BinaryTree<int>(root);
-            Console.WriteLine(String.Format("Preorder: {0}", DepthFirstTraversal<int>.GetPreorder(tree)));
-            Console.WriteLine(String.Format("Inorder: {0}", DepthFirstTraversal<int>.GetInorder(tree)));
-            Console.WriteLine(String.Format("Postorder: {0}", DepthFirstTraversal<int>.GetPostorder(tree)));
+            Console.WriteLine(String.Format("Binary Tree - Preorder: {0}", DepthFirstTraversal<int>.GetPreorder(tree)));
+            Console.WriteLine(String.Format("Binary Tree - Inorder: {0}", DepthFirstTraversal<int>.GetInorder(tree)));
+            Console.WriteLine(String.Format("Binary Tree - Postorder: {0}", DepthFirstTraversal<int>.GetPostorder(tree)));
 
-            TreeNode<int> foundNode = BreadthFirstTraversal<int>.Search(tree, 20);
+            BinaryTreeNode<int> foundNode = BreadthFirstTraversal<int>.Search(tree, 20);
             Console.WriteLine(String.Format("Breadth First Search for {0}: {1}", 20, foundNode != null ? "Yes" : "No"));
             foundNode = BreadthFirstTraversal<int>.Search(tree, 30);
             Console.WriteLine(String.Format("Breadth First Search for {0}: {1}", 30, foundNode != null ? "Yes" : "No"));
@@ -81,7 +115,7 @@ namespace CSFundamentals
 
         private static void TestHashTable()
         {
-            DataStructures.Hashtable<string, int> hashTable = new DataStructures.Hashtable<string, int>(50);
+            Hashtable<string, int> hashTable = new Hashtable<string, int>(50);
             hashTable.Add("Test", 29);
             hashTable.Add("Test2", 25);
 

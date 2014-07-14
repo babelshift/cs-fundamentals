@@ -1,4 +1,5 @@
-﻿using DataStructures;
+﻿using CSFundamentals.DataStructures;
+using DataStructures;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,13 +10,19 @@ namespace Algorithms
 {
     public static class BreadthFirstTraversal<T>
     {
-        public static TreeNode<T> Search(BinaryTree<T> tree, T value)
+        /// <summary>
+        /// Performs a breadth first search for a value in the passed tree.
+        /// </summary>
+        /// <param name="tree"></param>
+        /// <param name="value"></param>
+        /// <returns></returns>
+        public static BinaryTreeNode<T> Search(IBinaryTree<T> tree, T value)
         {
-            Queue<TreeNode<T>> search = new Queue<TreeNode<T>>();
+            Queue<BinaryTreeNode<T>> search = new Queue<BinaryTreeNode<T>>();
             search.Enqueue(tree.Root);
             while (search.Count > 0)
             {
-                TreeNode<T> currentNode = search.Dequeue();
+                BinaryTreeNode<T> currentNode = search.Dequeue();
                 if (currentNode.Value.Equals(value))
                 {
                     return currentNode;
