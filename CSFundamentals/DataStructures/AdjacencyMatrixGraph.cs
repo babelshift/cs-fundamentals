@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CSFundamentals.Algorithms
+namespace CSFundamentals.DataStructures
 {
-    class AStarGraphTraversal
+    public class AdjacencyMatrixGraph
     {
     }
 }

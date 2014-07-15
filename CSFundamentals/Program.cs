@@ -1,6 +1,5 @@
-﻿using Algorithms;
+﻿using CSFundamentals.Algorithms;
 using CSFundamentals.DataStructures;
-using DataStructures;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -23,7 +22,19 @@ namespace CSFundamentals
 
             TestBinarySearchTree();
 
+            TestAVLTree();
+
             Console.ReadLine();
+        }
+
+        private static void TestAVLTree()
+        {
+            AVLTree<int> tree = new AVLTree<int>();
+            tree.Add(10);
+            tree.Add(5);
+            tree.Add(2);
+            tree.Add(20);
+            tree.Add(13);
         }
 
         private static void TestBinarySearchTree()

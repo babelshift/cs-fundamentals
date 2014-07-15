@@ -1,12 +1,11 @@
 ﻿using CSFundamentals.DataStructures;
-using DataStructures;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Algorithms
+namespace CSFundamentals.Algorithms
 {
     public static class BreadthFirstTraversal<T>
     {

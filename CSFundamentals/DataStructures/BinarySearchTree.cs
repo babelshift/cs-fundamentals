@@ -6,8 +6,18 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DataStructures
+namespace CSFundamentals.DataStructures
 {
+    /// <summary>
+    /// Run time analysis:
+    ///                 Average         Worst
+    ///                 ---------------------
+    ///     Space       O(n)            O(n)
+    ///     Search      O(log n)        O(n)
+    ///     Insert      O(log n)        O(n)
+    ///     Delete      O(log n)        O(n)
+    /// </summary>
+    /// <typeparam name="T"></typeparam>
     public class BinarySearchTree<T> : IBinaryTree<T>
         where T : IComparable
     {
@@ -87,7 +97,7 @@ namespace DataStructures
         /// Adds the passed value to the binary search tree while perserving its properties.
         /// </summary>
         /// <param name="value"></param>
-        public void Add(T value)
+        public virtual void Add(T value)
         {
             Root = Add(null, Root, value);
         }

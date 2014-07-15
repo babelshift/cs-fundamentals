@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DataStructures
+namespace CSFundamentals.DataStructures
 {
     /// <summary>
     /// Represents a single entry into a hash table (a key/value pair)

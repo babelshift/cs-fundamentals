@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DataStructures
+namespace CSFundamentals.DataStructures
 {
     /// <summary>
     /// Represents a single node in a singly linked list with a value and a pointer to the next node

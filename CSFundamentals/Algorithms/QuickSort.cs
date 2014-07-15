@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Algorithms
+namespace CSFundamentals.Algorithms
 {
     /// <summary>
     /// Performs "in place" sorting.
