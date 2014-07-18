@@ -58,6 +58,7 @@
     <Compile Include="DataStructures\AVLTreeNode.cs" />
     <Compile Include="DataStructures\BinarySearchTree.cs" />
     <Compile Include="DataStructures\BinaryTreeNode.cs" />
+    <Compile Include="DataStructures\Graph.cs" />
     <Compile Include="DataStructures\GraphEdge.cs" />
     <Compile Include="DataStructures\GraphVertex.cs" />
     <Compile Include="DataStructures\IBinaryTree.cs" />

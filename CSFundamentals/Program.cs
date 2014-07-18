@@ -30,7 +30,33 @@ namespace CSFundamentals
 
             TestMinHeap();
 
+            TestStack();
+
+            TestQueue();
+
             Console.ReadLine();
+        }
+
+        private static void TestQueue()
+        {
+            DataStructures.Queue<int> queue = new DataStructures.Queue<int>();
+            queue.Enqueue(10);
+            queue.Enqueue(1);
+            queue.Enqueue(3);
+            Console.WriteLine(String.Format("Get next queue item: {0}", queue.Dequeue()));
+            Console.WriteLine(String.Format("Get next queue item: {0}", queue.Dequeue()));
+            Console.WriteLine(String.Format("Get next queue item: {0}", queue.Dequeue()));
+        }
+
+        private static void TestStack()
+        {
+            DataStructures.Stack<int> stack = new DataStructures.Stack<int>();
+            stack.Push(10);
+            stack.Push(1);
+            stack.Push(3);
+            Console.WriteLine(String.Format("Pop top of stack: {0}", stack.Pop()));
+            Console.WriteLine(String.Format("Pop top of stack: {0}", stack.Pop()));
+            Console.WriteLine(String.Format("Pop top of stack: {0}", stack.Pop()));
         }
 
         private static void TestMinHeap()

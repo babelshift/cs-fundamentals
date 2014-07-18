@@ -17,8 +17,10 @@ namespace CSFundamentals.Algorithms
         /// <returns></returns>
         public static BinaryTreeNode<T> Search(IBinaryTree<T> tree, T value)
         {
-            Queue<BinaryTreeNode<T>> search = new Queue<BinaryTreeNode<T>>();
+            System.Collections.Generic.Queue<BinaryTreeNode<T>> search = new System.Collections.Generic.Queue<BinaryTreeNode<T>>();
+
             search.Enqueue(tree.Root);
+
             while (search.Count > 0)
             {
                 BinaryTreeNode<T> currentNode = search.Dequeue();
