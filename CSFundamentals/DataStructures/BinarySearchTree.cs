@@ -38,6 +38,8 @@ namespace CSFundamentals.DataStructures
             if(node.Left != null && node.Right != null)
             {
                 BinaryTreeNode<T> newNode = node.Right;
+                
+                // find the smallest child to the right node
                 while (newNode.Left != null)
                 {
                     newNode = newNode.Left;

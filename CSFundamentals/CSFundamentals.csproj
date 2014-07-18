@@ -58,6 +58,8 @@
     <Compile Include="DataStructures\AVLTreeNode.cs" />
     <Compile Include="DataStructures\BinarySearchTree.cs" />
     <Compile Include="DataStructures\BinaryTreeNode.cs" />
+    <Compile Include="DataStructures\GraphEdge.cs" />
+    <Compile Include="DataStructures\GraphVertex.cs" />
     <Compile Include="DataStructures\IBinaryTree.cs" />
     <Compile Include="DataStructures\RedBlackTreeNode.cs" />
     <Compile Include="Utility.cs" />
@@ -65,7 +67,7 @@
     <Compile Include="DataStructures\BinaryTree.cs" />
     <Compile Include="DataStructures\AdjacencyListGraph.cs" />
     <Compile Include="DataStructures\Hashtable.cs" />
-    <Compile Include="DataStructures\Heap.cs" />
+    <Compile Include="DataStructures\MinHeap.cs" />
     <Compile Include="DataStructures\SinglyLinkedList.cs" />
     <Compile Include="DataStructures\Queue.cs" />
     <Compile Include="DataStructures\RedBlackTree.cs" />

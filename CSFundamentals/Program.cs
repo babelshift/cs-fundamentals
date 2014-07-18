@@ -24,7 +24,105 @@ namespace CSFundamentals
 
             TestAVLTree();
 
+            TestGetFirstNonRepeatingCharacter();
+
+            TestIsPalindrome();
+
+            TestMinHeap();
+
             Console.ReadLine();
+        }
+
+        private static void TestMinHeap()
+        {
+            MinHeap<int> minHeap = new MinHeap<int>();
+            minHeap.Push(10);
+            Console.WriteLine(minHeap.ToString());
+            minHeap.Push(3);
+            Console.WriteLine(minHeap.ToString());
+            minHeap.Push(7);
+            Console.WriteLine(minHeap.ToString());
+            minHeap.Push(1);
+            Console.WriteLine(minHeap.ToString());
+            minHeap.Pop();
+            Console.WriteLine(minHeap.ToString());
+        }
+
+        private static void TestIsPalindrome()
+        {
+
+        }
+
+        private static void TestGetFirstNonRepeatingCharacter()
+        {
+            Console.WriteLine(GetFirstNonRepeatingCharacter("ABCDEDCBB"));
+        }
+
+        private static string[] FindDuplicatePhoneNumbers(string[] phoneNumbers)
+        {
+            // external merge sort by sorting in chunks
+            return null;
+        }
+
+        private static bool IsPairWithSumTo(int[] source, int n)
+        {
+            // sort the array first
+            QuickSort<int>.Sort(source);
+
+            // proceed with comparing from opposite ends of the array
+            int i = 0;
+            int j = source.Length - 1;
+
+            while(i < j)
+            {
+                int sum = source[i] + source[j];
+
+                if(sum == n)
+                {
+                    return true;
+                }
+                else if (sum > n)
+                {
+                    j--;
+                }
+                else
+                {
+                    i++;
+                }
+            }
+
+            return false;
+        }
+
+        private static char GetFirstNonRepeatingCharacter(string n)
+        {
+            Dictionary<char, int> dictionary = new Dictionary<char, int>();
+            
+            foreach (char c in n)
+            {
+                int charCount = 0;
+
+                if (dictionary.TryGetValue(c, out charCount))
+                {
+                    charCount++;
+                    dictionary[c] = charCount;
+                }
+                else
+                {
+                    dictionary.Add(c, 1);
+                }
+            }
+
+            foreach(char c in n)
+            {
+                int charCount = dictionary[c];
+                if(charCount == 1)
+                {
+                    return c;
+                }
+            }
+
+            throw new Exception("No non-repeating character found.");
         }
 
         private static void TestAVLTree()
