@@ -18,6 +18,8 @@ namespace CSFundamentals
 
             TestSorting(unsorted);
 
+            TestBinarySearch();
+
             TestBinaryTree();
 
             TestBinarySearchTree();
@@ -35,6 +37,12 @@ namespace CSFundamentals
             TestQueue();
 
             Console.ReadLine();
+        }
+
+        private static void TestBinarySearch()
+        {
+            int[] array = new int[] { 10, 4, 29, 327, 2, 1, 4, 55, 47 };
+            Console.WriteLine(String.Format("Index at: {0}", BinarySearch<int>.Search(array, 2)));
         }
 
         private static void TestQueue()
@@ -99,11 +107,11 @@ namespace CSFundamentals
             int i = 0;
             int j = source.Length - 1;
 
-            while(i < j)
+            while (i < j)
             {
                 int sum = source[i] + source[j];
 
-                if(sum == n)
+                if (sum == n)
                 {
                     return true;
                 }
@@ -123,7 +131,7 @@ namespace CSFundamentals
         private static char GetFirstNonRepeatingCharacter(string n)
         {
             Dictionary<char, int> dictionary = new Dictionary<char, int>();
-            
+
             foreach (char c in n)
             {
                 int charCount = 0;
@@ -139,10 +147,10 @@ namespace CSFundamentals
                 }
             }
 
-            foreach(char c in n)
+            foreach (char c in n)
             {
                 int charCount = dictionary[c];
-                if(charCount == 1)
+                if (charCount == 1)
                 {
                     return c;
                 }
