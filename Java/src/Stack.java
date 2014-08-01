@@ -1,5 +1,5 @@
 
-public class Stack<T extends Comparable<T>> {
+public class Stack<T> {
 	private LinkedList<T> list = new LinkedList<T>();
 	
 	private int size = 0;
@@ -36,5 +36,9 @@ public class Stack<T extends Comparable<T>> {
 		list.removeHead();
 		size--;
 		return topValue;
+	}
+	
+	public String toString() {
+		return list.toString();
 	}
 }
