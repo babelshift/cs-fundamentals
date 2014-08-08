@@ -13,6 +13,7 @@ public class LinkedList<T> {
 	}
 	
 	public void removeHead() {
+		if(head == null) return;
 		LinkedListNode<T> top = head;
 		head = head.getNext();
 		top.setNext(null);
